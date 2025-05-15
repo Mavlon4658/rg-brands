@@ -1,0 +1,45 @@
+@import './normalize',
+        './globals';
+
+body {
+    font-weight: 400;
+    background: #01040F;
+    color: #FFF;
+}
+
+button,
+input,
+select,
+textarea {
+    font-weight: 400;
+    color: #FFF;
+}
+
+.container {
+    max-width: 1440px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+// Header
+.header {
+    &-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+
+    &-logo {
+        img {
+            width: 40px;
+        }
+    }
+
+    &-navs {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+}
+// Header end

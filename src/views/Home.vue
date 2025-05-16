@@ -77,6 +77,13 @@ export default {
   <!-- News -->
   <section class="news">
     <div class="container">
+      <select name="" id="" class="news-select">
+        <option 
+          v-for="(data, i) in newsHead"
+          :key="i"
+          value=""
+        >{{ data }}</option>
+      </select>
       <ul class="news-head">
         <li
           v-for="(data, i) in newsHead"

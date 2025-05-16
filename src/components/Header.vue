@@ -7,7 +7,7 @@ export default {
 <template>
     <header class="header">
         <div class="container header-container">
-            <router-link class="header-logo">
+            <router-link class="header-logo" to="/">
                 <img :src="$getImage('logo-light.svg')" alt="">
             </router-link>
             <ul class="header-navs">

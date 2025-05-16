@@ -137,6 +137,10 @@ export default {
                     </ul>
                 </div>
             </div>
+            <div class="footer-bottom">
+                <p>© RG Brands</p>
+                <img :src="$getImage('footer-logo-2.svg')" alt="">
+            </div>
         </div>
     </footer>
 </template>

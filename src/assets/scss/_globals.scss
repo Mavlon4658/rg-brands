@@ -1,4 +1,11 @@
-$font-google: 'Google sans', serif;
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-inter: "Inter", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+$font-onest: "Onest", sans-serif;
+$font-roboto: "Roboto", sans-serif;
+// Fonts end
 
 @mixin media($value) {
     @if ($value < 0) {

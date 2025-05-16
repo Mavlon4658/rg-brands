@@ -10,9 +10,7 @@ const props = defineProps({
 <template>
     <button
         class="main-btn"
-        :class="{
-            'bg-[#FF9500]': props.theme == 'orange',
-        }"
+        :class="`btn-${theme}`"
     >
         <slot />
     </button>

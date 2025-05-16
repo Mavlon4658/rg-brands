@@ -1,14 +1,25 @@
 <script>
 export default {
     name: "Header",
+    mounted () {
+        let header = this.$refs.header;
+        window.addEventListener('scroll', () => {
+            if (scrollY > 100) {
+                header.classList.add('active');
+            } else {
+                header.classList.remove('active');
+            }
+        })
+    }
 }
 </script>
 
 <template>
-    <header class="header">
+    <header class="header" ref="header">
         <div class="container header-container">
             <router-link class="header-logo" to="/">
                 <img :src="$getImage('logo-light.svg')" alt="">
+                <img :src="$getImage('logo.svg')" alt="">
             </router-link>
             <ul class="header-navs">
                 <li>

@@ -1,6 +1,11 @@
 <script>
+import AboutCompany from '@/components/AboutCompany.vue';
+
 export default {
   name: 'Home',
+  components: {
+    AboutCompany,
+  },
   data () {
     return {
       newsHead: ['Все новости','Новости СМИ','Новости о Брендах','Новинки ','Прессрелизы ','Акции',],
@@ -11,6 +16,7 @@ export default {
 </script>
 
 <template>
+  <!-- Home -->
   <section class="home">
     <div class="container home-container">
       <h1 class="home-title">Напитки на любой вкус <br>Для каждого случая</h1>
@@ -21,6 +27,11 @@ export default {
       </div>
     </div>
   </section>
+  <!-- Home end -->
+
+  <!-- About company -->
+  <AboutCompany />
+  <!-- About company end -->
 
   <!-- Product -->
   <section class="product">

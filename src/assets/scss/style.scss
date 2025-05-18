@@ -227,6 +227,71 @@ textarea {
 }
 // Header end
 
+// Menu
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: #00873d;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 24px 40px 20px;
+
+    &.active {
+        @include media(1280) {
+            display: flex;
+        }
+    }
+
+    &-top {
+        width: 100%;
+    }
+
+    &-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 64px;
+    }
+
+    &-navs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__link {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 120%;
+            text-transform: capitalize;
+            color: #fff;
+            padding: 8px 10px;
+        }
+    }
+
+    &-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        p {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        img {
+            width: 166px;
+        }
+    }
+}
+// Menu end
+
 // Home
 .home {
     background: #00873D;
@@ -317,6 +382,227 @@ textarea {
     }
 }
 // Home end
+
+// About company
+.about-company {
+    &__content {
+        width: 3038px;
+        min-width: 3038px;
+        height: 900px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-start;
+        width: 641px;
+        margin-right: 54px;
+        flex-shrink: 0;
+
+        h3 {
+            font-family: $font-montserrat;
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 120%;
+            text-transform: capitalize;
+            color: #00873d;
+        }
+
+        p {
+            font-family: $font-montserrat;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 151%;
+        }
+
+        &-card {
+            border: 1px solid #00873d;
+            border-radius: 20px;
+            padding: 20px;
+            width: 100%;
+
+            h2 {
+                font-weight: 700;
+                font-size: 200px;
+                line-height: 120%;
+                color: #00873d;
+                display: flex;
+                align-items: flex-end;
+                margin-bottom: -29px;
+
+                span {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 120%;
+                    margin-bottom: 42px;
+                }
+            }
+
+            h4 {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 120%;
+                color: #00873d;
+                margin-bottom: 30px;
+                padding-left: 9px;
+            }
+
+            a {
+                border: 0.60px solid rgba(0, 0, 0, 0.4);
+                border-radius: 12px;
+                padding: 12px 24px 12px 40px;
+                display: inline-flex;
+                font-size: 16px;
+                line-height: 120%;
+                gap: 12px;
+            }
+        }
+    }
+
+    .brand-logo {
+        height: 100%;
+        width: auto;
+    }
+
+    .card {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 0 127px 0 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+
+        &-wrap {
+            display: grid;
+            grid-template-columns: 640px 640px 640px;
+
+            li {
+                height: 450px;
+                flex-shrink: 0;
+                position: relative;
+                z-index: 1;
+
+                &:nth-child(1) {
+                    border-radius: 0 0 80px 20px;
+                    width: 640px;
+                    background: #00873d;
+                    padding: 0 40px 40px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    h3 {
+                        font-weight: 700;
+                        font-size: 120px;
+                        line-height: 120%;
+                        text-transform: capitalize;
+                        color: #fff;
+                        display: flex;
+                        align-items: flex-end;
+
+                        span {
+                            font-weight: 500;
+                            font-size: 20px;
+                            line-height: 120%;
+                            color: #fff;
+                            padding-bottom: 23px;
+                        }
+                    }
+
+                    a {
+                        border: 0.60px solid rgba(255, 255, 255, 0.4);
+                        border-radius: 12px;
+                        padding: 12px 24px 12px 40px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        font-size: 16px;
+                        line-height: 120%;
+                        color: #fff;
+                        position: absolute;
+                        top: 39px;
+                        right: 39px;
+                    }
+
+                    .map-card {
+                        position: absolute;
+                        width: 430px;
+                        left: 81px;
+                        bottom: 94px;
+                        z-index: -1;
+                    }
+
+                    p {
+                        font-family: $font-montserrat;
+                        font-weight: 600;
+                        font-size: 24px;
+                        line-height: 120%;
+                        color: #fff;
+                    }
+                }
+
+                &:last-child {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+
+        h3 {
+            font-family: $font-montserrat;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 120%;
+            text-transform: capitalize;
+            color: #00873d;
+        }
+
+        p {
+            font-family: $font-montserrat;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 151%;
+            color: #2f2b2b;
+            max-width: 423px;
+        }
+
+        .more-link {
+            position: absolute;
+            right: 40px;
+            top: 77px;
+        }
+
+        .icon {
+            position: absolute;
+            bottom: 0;
+            right: 30px;
+            z-index: -1;
+        }
+    }
+
+    .more-link {
+        border: 0.60px solid rgba(0, 0, 0, 0.4);
+        border-radius: 12px;
+        padding: 12px 24px 12px 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+        font-size: 16px;
+        line-height: 120%;
+    }
+}
+// About company end
 
 // Product
 .product {
@@ -578,6 +864,7 @@ textarea {
         border-radius: 20px;
         width: auto;
         margin-bottom: 40px;
+        overflow: hidden;
 
         @include media(1240) {
             display: none;

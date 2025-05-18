@@ -7,8 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "gsap": "^3.13.0",
     "sass": "^1.88.0",
     "sass-loader": "^16.0.5",
+    "swiper": "^10.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
   },

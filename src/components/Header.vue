@@ -1,6 +1,19 @@
 <script>
 export default {
     name: "Header",
+    data () {
+        return {
+            navs: [
+                {name: 'О компании', to: '/'},
+                {name: 'Наши бренды', to: '/'},
+                {name: 'медиа', to: '/'},
+                {name: 'карьера', to: '/'},
+                {name: 'Контакты', to: '/'},
+            ],
+            navsActive: 0,
+            menuOpen: false,
+        }
+    },
     mounted () {
         let header = this.$refs.header;
         window.addEventListener('scroll', () => {
@@ -22,20 +35,14 @@ export default {
                 <img :src="$getImage('logo.svg')" alt="">
             </router-link>
             <ul class="header-navs">
-                <li>
-                    <router-link class="header-navs__link active" to="/">О компании</router-link>
-                </li>
-                <li>
-                    <router-link class="header-navs__link" to="/">Наши бренды</router-link>
-                </li>
-                <li>
-                    <router-link class="header-navs__link" to="/">медиа</router-link>
-                </li>
-                <li>
-                    <router-link class="header-navs__link" to="/">карьера</router-link>
-                </li>
-                <li>
-                    <router-link class="header-navs__link" to="/">Контакты</router-link>
+                <li v-for="(nav, i) in navs" :key="i">
+                    <router-link 
+                        class="header-navs__link " 
+                        :class="{
+                            'active': navsActive == i
+                        }"
+                        :to="nav.to"
+                    >{{ nav.name }}</router-link>
                 </li>
             </ul>
             <div class="header-right">
@@ -46,7 +53,7 @@ export default {
                     </svg>
                 </button>
                 <a href="#">RU</a>
-                <button class="bars">
+                <button @click="menuOpen = true" class="bars">
                     <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M23.5347 8C23.5347 7.73478 23.4501 7.48043 23.2997 7.29289C23.1492 7.10536 22.9451 7 22.7323 7H1.33699C1.1242 7 0.920129 7.10536 0.769664 7.29289C0.619198 7.48043 0.534668 7.73478 0.534668 8C0.534668 8.26522 0.619198 8.51957 0.769664 8.70711C0.920129 8.89464 1.1242 9 1.33699 9H22.7323C22.9451 9 23.1492 8.89464 23.2997 8.70711C23.4501 8.51957 23.5347 8.26522 23.5347 8Z" fill="white" />
                         <path d="M23.7778 15C23.7778 14.7348 23.6933 14.4804 23.5428 14.2929C23.3924 14.1054 23.1883 14 22.9755 14H1.58016C1.36737 14 1.16329 14.1054 1.01283 14.2929C0.862362 14.4804 0.777832 14.7348 0.777832 15C0.777832 15.2652 0.862362 15.5196 1.01283 15.7071C1.16329 15.8946 1.36737 16 1.58016 16H22.9755C23.1883 16 23.3924 15.8946 23.5428 15.7071C23.6933 15.5196 23.7778 15.2652 23.7778 15Z" fill="white" />
@@ -56,4 +63,28 @@ export default {
             </div>
         </div>
     </header>
+
+    <!-- Menu -->
+    <section :class="`menu ${menuOpen ? 'active' : ''}`">
+        <div class="menu-top">
+            <div class="menu-head">
+                <router-link class="menu-logo" to="/">
+                    <img :src="$getImage('logo-light.svg')" alt="">
+                </router-link>
+                <button @click="menuOpen = false" class="menu-close">
+                    <img :src="$getImage('times.svg')" alt="">
+                </button>
+            </div>
+            <ul class="menu-navs">
+                <li v-for="(nav, i) in navs" :key="i">
+                    <router-link class="menu-navs__link" :to="nav.to">{{ nav.name }}</router-link>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-bottom">
+            <p>© RG Brands</p>
+            <img :src="$getImage('footer-logo-2.svg')" alt="">
+        </div>
+    </section>
+    <!-- Menu end -->
 </template>
